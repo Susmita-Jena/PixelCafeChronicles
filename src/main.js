@@ -1,23 +1,23 @@
-import BootScene from './scenes/BootScene.js';
-import PreloadScene from './scenes/PreloadScene.js';
-import MenuScene from './scenes/MenuScene.js';
-import GameScene from './scenes/GameScene.js';
+import Phaser from 'phaser'
+import MenuScene from './scenes/MenuScene.js'
+import GameScene from './scenes/GameScene.js'
 
 const config = {
   type: Phaser.AUTO,
-  width: 960,
-  height: 540,
-  backgroundColor: '#2d1b00',
+  width: 480,
+  height: 854,       // portrait ratio for mobile feel
+  backgroundColor: '#ede4cc',
   pixelArt: true,
   scale: {
     mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+    parent: document.body,
   },
   physics: {
     default: 'arcade',
     arcade: { gravity: { y: 0 }, debug: false }
   },
-  scene: [BootScene, PreloadScene, MenuScene, GameScene]
-};
+  scene: [MenuScene, GameScene]
+}
 
-const game = new Phaser.Game(config);
+export default new Phaser.Game(config)
