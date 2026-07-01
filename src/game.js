@@ -4,10 +4,15 @@ import MenuScene from "./scenes/MenuScene";
 export const config = {
     type: Phaser.AUTO,
 
-    width: 1280,
-    height: 720,
+    // Internal game resolution
+    width: 320,
+    height: 180,
 
     backgroundColor: "#F6E8DA",
+
+    pixelArt: true,
+    antialias: false,
+    roundPixels: true,
 
     scale: {
         mode: Phaser.Scale.FIT,
@@ -16,3 +21,5 @@ export const config = {
 
     scene: [MenuScene]
 };
+
+export default new Phaser.Game(config);
